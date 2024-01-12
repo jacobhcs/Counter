@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, session, redirect
+import random
 
 app = Flask(__name__)
 app.secret_key = 'secretkey'
@@ -20,6 +21,7 @@ def count2():
 @app.route('/reset', methods=['POST'])
 def reset():
 	session.clear()
+	print(random.randint(1,100))
 	return redirect('/')
 
 if __name__ == "__main__":
