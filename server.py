@@ -19,9 +19,7 @@ def count2():
 
 @app.route('/reset', methods=['POST'])
 def reset():
-	if 'count' not in session:
-		session['count']=0
-	session['count']=0
+	session.clear()
 	return redirect('/')
 
 if __name__ == "__main__":
